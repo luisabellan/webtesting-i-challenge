@@ -27,7 +27,7 @@ In this project, you will **write unit tests and the implementation code** for a
 
 Follow these steps to setup your git _fork_ and _branch_.
 
-- [*] Fork this repository.
+- [ * ] Fork this repository.
 - [*] Use GitHub's website to add your project manager as collaborator on **your fork**.
 - [*] **Clone your forked version** of the repository (**Not Lambda's**!).
 - [*] Create a new branch: `git checkout -b <firstName-lastName>`.

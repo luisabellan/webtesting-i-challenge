@@ -208,18 +208,7 @@ describe("enhancer unit tests", () => {
 
 
 
-/*   it("items", () => {
-      expect(enhancer.items({
-          name: 'turbo',
-          enhancement: 18,
-          durability: 4
-      })).toStrictEqual({
-          name: 'turbo',
-          enhancement: 19,
-          durability: 4
 
-      })
-  }) */
 
 
 

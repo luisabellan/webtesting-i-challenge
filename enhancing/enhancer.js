@@ -1,3 +1,4 @@
+
 module.exports = {
   succeed,
   fail,
@@ -5,18 +6,78 @@ module.exports = {
   get,
 };
 
-function succeed(item) {
-  return { ...item };
+function repair(item) {
+  return { 
+    name: item.name,
+    enhancement: item.enhancement,
+    durability: 100
+  };
 }
+
+function succeed(item) {
+  if (item.enhancement === 20){
+
+    return { 
+        name: item.name,
+        enhancement: item.enhancement,
+        durability: item.durability
+      }
+  }else{
+    return { 
+      name: item.name,
+      enhancement: item.enhancement + 1,
+      durability: item.durability
+    }
+  }
+    
+ 
+}
+
+
 
 function fail(item) {
-  return { ...item };
+  if (item.enhancement < 15){
+
+    return { 
+      ...item,
+        durability: item.durability - 5
+      }
+  }
+  if (item.enhancement > 16){
+    return { 
+      ...item,
+      enhancement: item.enhancement - 1,
+    }
+  }
+  if (item.enhancement >= 15){
+    return { 
+      ...item,
+      durability: item.durability - 10
+    }
+  }
+
+ 
+    
+ 
 }
 
-function repair(item) {
-  return { ...item };
-}
 
 function get(item) {
-  return { ...item };
+  if (item.enhancement === 0){
+
+    return { 
+      ...item,
+        
+      }
+  }
+  if (item.enhancement > 0){
+    return { 
+      ...item,
+      name: `[+${item.enhancement}] ${item.name}`,
+    }
+  }
+
+
 }
+
+

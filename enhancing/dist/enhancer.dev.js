@@ -58,9 +58,13 @@ function fail(item) {
 }
 
 function get(item) {
-  return {
-    name: item.name,
-    enhancement: item.enhancement,
-    durability: item.durability
-  };
+  if (item.enhancement === 0) {
+    return _objectSpread({}, item);
+  }
+
+  if (item.enhancement > 0) {
+    return _objectSpread({}, item, {
+      name: "[+".concat(item.enhancement, "] ").concat(item.name)
+    });
+  }
 }

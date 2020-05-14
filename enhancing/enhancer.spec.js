@@ -101,22 +101,51 @@ describe("enhancer unit tests", () => {
             durability: 20
 
         })
-   
-    })
-})
 
-  /*   it("items", () => {
-        expect(enhancer.items({
+    })
+    // stretch
+    it("get() enhancement level equals to 0", () => {
+        expect(enhancer.get({
             name: 'turbo',
-            enhancement: 18,
-            durability: 4
+            enhancement: 0,
+            durability: 20
         })).toStrictEqual({
             name: 'turbo',
-            enhancement: 19,
-            durability: 4
-
+            enhancement: 0,
+            durability: 20
         })
-    }) */
+
+
+    })
+    it("get() enhancement level greater than 0", () => {
+        expect(enhancer.get({
+            name: 'turbo',
+            enhancement: 1,
+            durability: 20
+        })).toStrictEqual({
+            name: '[+1] turbo',
+            enhancement: 1,
+            durability: 20
+        })
+    })
+
+})
+
+
+
+
+/*   it("items", () => {
+      expect(enhancer.items({
+          name: 'turbo',
+          enhancement: 18,
+          durability: 4
+      })).toStrictEqual({
+          name: 'turbo',
+          enhancement: 19,
+          durability: 4
+
+      })
+  }) */
 
 
 

@@ -89,6 +89,29 @@ describe("enhancer unit tests", function () {
       enhancement: 16,
       durability: 20
     });
+  }); // stretch
+
+  it("get() enhancement level equals to 0", function () {
+    expect(enhancer.get({
+      name: 'turbo',
+      enhancement: 0,
+      durability: 20
+    })).toStrictEqual({
+      name: 'turbo',
+      enhancement: 0,
+      durability: 20
+    });
+  });
+  it("get() enhancement level greater than 0", function () {
+    expect(enhancer.get({
+      name: 'turbo',
+      enhancement: 1,
+      durability: 20
+    })).toStrictEqual({
+      name: '[+1] turbo',
+      enhancement: 1,
+      durability: 20
+    });
   });
 });
 /*   it("items", () => {
@@ -100,5 +123,6 @@ describe("enhancer unit tests", function () {
           name: 'turbo',
           enhancement: 19,
           durability: 4
-       })
+
+      })
   }) */

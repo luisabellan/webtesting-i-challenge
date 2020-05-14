@@ -63,11 +63,21 @@ function fail(item) {
 
 
 function get(item) {
-  return { 
-    name: item.name,
-    enhancement: item.enhancement,
-    durability: item.durability
-  };
+  if (item.enhancement === 0){
+
+    return { 
+      ...item,
+        
+      }
+  }
+  if (item.enhancement > 0){
+    return { 
+      ...item,
+      name: `[+${item.enhancement}] ${item.name}`,
+    }
+  }
+
+
 }
 
 

@@ -89,6 +89,47 @@ describe("enhancer unit tests", function () {
       enhancement: 16,
       durability: 20
     });
+  });
+  it("items have name", function () {
+    expect({
+      name: 'turbo',
+      enhancement: 17,
+      durability: 20
+    }).toHaveProperty('name');
+  });
+  it("items have enhancement", function () {
+    expect({
+      name: 'turbo',
+      enhancement: 17,
+      durability: 20
+    }).toHaveProperty('enhancement');
+  });
+  it("items have durability", function () {
+    expect({
+      name: 'turbo',
+      enhancement: 17,
+      durability: 20
+    }).toHaveProperty('durability');
+  });
+  it("items's enhancement is a number from 0 to 20", function () {
+    var item = {
+      name: 'turbo',
+      enhancement: 17,
+      durability: 15
+    };
+    expect(item.enhancement).not.toBeNaN();
+    expect(item.enhancement).toBeGreaterThan(0);
+    expect(item.enhancement).toBeLessThan(20);
+  });
+  it("items's durability is a number from 0 to 100", function () {
+    var item = {
+      name: 'turbo',
+      enhancement: 17,
+      durability: 15
+    };
+    expect(item.durability).not.toBeNaN();
+    expect(item.durability).toBeGreaterThan(0);
+    expect(item.durability).toBeLessThan(20);
   }); // stretch
 
   it("get() enhancement level equals to 0", function () {

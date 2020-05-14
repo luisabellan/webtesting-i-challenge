@@ -103,6 +103,80 @@ describe("enhancer unit tests", () => {
         })
 
     })
+    it("items have name", () => {
+        expect({
+            name: 'turbo',
+            enhancement: 17,
+            durability: 20
+        }).toHaveProperty('name')
+
+
+    })
+
+    it("items have enhancement", () => {
+        expect({
+            name: 'turbo',
+            enhancement: 17,
+            durability: 20
+        }).toHaveProperty('enhancement')
+
+
+    })
+
+    it("items have durability", () => {
+        expect({
+            name: 'turbo',
+            enhancement: 17,
+            durability: 20
+        }).toHaveProperty('durability')
+
+
+    })
+
+   
+    it("items's enhancement is a number from 0 to 20", () => {
+        const item = {
+            name: 'turbo',
+            enhancement: 17,
+            durability: 15
+
+        }
+        
+        expect(item.enhancement).not.toBeNaN()
+
+        expect(item.enhancement).toBeGreaterThan(0)
+        expect(item.enhancement).toBeLessThan(20)
+
+       
+   
+
+
+    })
+
+    it("items's durability is a number from 0 to 100", () => {
+        const item = {
+            name: 'turbo',
+            enhancement: 17,
+            durability: 15
+
+        }
+        
+        expect(item.durability).not.toBeNaN()
+
+        expect(item.durability).toBeGreaterThan(0)
+        expect(item.durability).toBeLessThan(20)
+
+       
+   
+
+
+    })
+
+ 
+
+
+
+
     // stretch
     it("get() enhancement level equals to 0", () => {
         expect(enhancer.get({
